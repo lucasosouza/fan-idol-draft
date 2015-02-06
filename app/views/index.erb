@@ -1,0 +1,27 @@
+
+<h1>Fans</h1>
+<ul>
+  <% current_user.fans.each do |fan| %>
+    <li><%= fan.username %> <a href="/delete/<%=fan.id%>/<%=current_user.id%>">delete</a></li>
+  <% end %>
+</ul>
+
+<form action='/fan' method='post'>
+  <input type="text" name="username" placeholder="Username">
+  <input type="submit" value="add fan">
+</form>
+
+<h1>Idols</h1>
+<ul>
+  <% current_user.idols.each do |idol| %>
+    <li><%= idol.username %> <a href="/delete/<%=current_user.id%>/<%=idol.id%>">delete</a></li>
+  <% end %>
+</ul>
+
+<form action='/idol' method='post'>
+  <input type="text" name="username" placeholder="Username">
+  <input type="submit" value="add idol">
+</form>
+
+
+
